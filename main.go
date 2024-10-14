@@ -13,7 +13,8 @@ func hahaHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Haha! You found the funny route!")
 	a := 3
 	b := 4
-	fmt.Fprintln(w, "Here the result of %d plus %d. It equals: %d", a, b, add(a, b))
+	//fmt.Fprintln(w, "Here the result of %d plus %d. It equals: %d", a, b, add(a, b))
+	w.Write([]byte(fmt.Sprintf("Here the result of %d plus %d. It equals: %d", a, b, add(a, b))))
 }
 
 func add(a int, b int) (c int) {
